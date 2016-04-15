@@ -1,0 +1,35 @@
+﻿$(document).ready(function(e) {
+		
+		/*$('#page table').on('click',function(ev){ $('#page h5').slideDown(); });*/
+	
+        $('#btnekle').on('click',function(){
+		
+			if($('#mekanadi').val() != "" &&  $('#adres').val() != "" && $('#aciklama').val() != ""){
+				
+				var filename = $('#resim').val().replace(/C:\\fakepath\\/i, '')
+				
+				var icerik_metin = "<div class='container'>"+
+				"<table style='border-bottom: 1px solid #DCDCDC;'><tr>"+
+				"<td style='display:block; padding:10px;'><img src='img/"+filename+"' style='width:150px' /></td>"+
+				"<td style='width:170px' >" + "<h6><b>" + $('#mekanadi').val() + "</b></h6>" +
+				"<h6>" + $('#tel').val() + "</h6>" + 
+				"<h6>" + $('#adres').val() + "</h6>"+
+				"</tr></table>"+
+				"<h5 style='padding:10px; margin-top:0;'>" + $('#aciklama').val()+ "</h5>";
+				
+				
+				$('#page').append('<div class="row">');
+				$('#page').append(icerik_metin);
+				$('#page').append('</div><hr />');
+				
+				/*$('#page h5').slideUp();*/
+				
+				$('.girdi').val('');
+			}
+			
+			
+			
+			});
+			
+		
+    });
